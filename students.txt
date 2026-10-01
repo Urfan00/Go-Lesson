@@ -1,0 +1,10 @@
+------------------------
+Student Name: Urfan
+Student Number: 915
+Student Lectures: [Math History]
+------------------------
+------------------------
+Student Name: Fidan
+Student Number: 1509
+Student Lectures: [Fizik Biology]
+------------------------

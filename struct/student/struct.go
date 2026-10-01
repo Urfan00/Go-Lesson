@@ -2,6 +2,7 @@ package studentStruct
 
 import (
 	"fmt"
+	"os"
 	"strconv"
 	"strings"
 )
@@ -67,11 +68,40 @@ func CreateWithScan() Student {
 	lectures := strings.Split(lecturesText, ",")
 
 	newStudent := Student{
-		Name: name,
-		number: number,
+		Name:     name,
+		number:   number,
 		lectures: lectures,
 	}
-	
+
 	return newStudent
+
+}
+
+func SaveToFile(students []Student) {
+
+	file, err := os.Create("students.txt")
+	if err != nil {
+		panic(err)
+	}
+
+	defer file.Close()
+
+	for _, std := range students {
+		_, err := file.WriteString(
+			fmt.Sprintf(
+				"------------------------\n"+
+					"Student Name: %s\n"+
+					"Student Number: %d\n"+
+					"Student Lectures: %v\n"+
+					"------------------------\n",
+				std.Name, std.number, std.lectures,
+			),
+		)
+		if err != nil {
+			panic(err)
+		}
+	}
+
+	fmt.Println("Saved to file!!")
 
 }

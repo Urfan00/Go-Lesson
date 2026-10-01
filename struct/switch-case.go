@@ -32,7 +32,8 @@ main_loop:
 		fmt.Println("Please Choose Action: ")
 		fmt.Println("1. Add Student")
 		fmt.Println("2. List Student")
-		fmt.Println("3. Quite")
+		fmt.Println("3. Save Student")
+		fmt.Println("4. Quit")
 
 		fmt.Scanln(&action)
 
@@ -46,6 +47,8 @@ main_loop:
 				value.ShowInfoReceiver()
 			}
 		case "3":
+			studentStruct.SaveToFile(data)
+		case "4":
 			break main_loop
 		default:
 			fmt.Println("Yanlis secim")
