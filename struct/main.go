@@ -26,4 +26,26 @@ func main() {
 	s1.RenameReceiver("BAZAYEVA")
 	fmt.Println(s1.Name)
 
+
+
+
+	// Input almaq Userdan
+	var text string
+
+	fmt.Print("Enter Name: ")
+	fmt.Scanln(&text)
+
+	fmt.Println("You entered: ", text)
+
+	fmt.Println("******CREATE WITH SCAN START **********")
+	
+	s3 := studentStruct.CreateWithScan()
+	s3.ShowInfoReceiver()
+	
+	fmt.Println("******CREATE WITH SCAN END**********")
+
+
+
+
+
 }
