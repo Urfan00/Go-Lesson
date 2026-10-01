@@ -17,4 +17,13 @@ func main() {
 	fmt.Println("*********")
 	fmt.Println(s1.Name)
 
+	// RECEIVER FUNCTION
+	fmt.Println("RECEIVER FUNCTION")
+	s1.ShowInfoReceiver()
+	s2.ShowInfoReceiver()
+
+	fmt.Println("******RENAME**********")
+	s1.RenameReceiver("BAZAYEVA")
+	fmt.Println(s1.Name)
+
 }
